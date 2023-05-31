@@ -7,12 +7,13 @@ using System.Text;
 using System.Threading.Tasks;
 using UniversoGeek.Domain.Entities;
 using UniversoGeek.Domain.Interfaces;
+using UniversoGeek.Infra.Data.Context;
 
 namespace UniversoGeek.Infra.Data.Repositories
 {
     public class VoucherRepository : Repository<Voucher>, IVoucherRepository
     {
-        public VoucherRepository(XStoreDbContext context) : base(context)
+        public VoucherRepository(UniversoGeekDbContext context) : base(context)
         {
         }
 

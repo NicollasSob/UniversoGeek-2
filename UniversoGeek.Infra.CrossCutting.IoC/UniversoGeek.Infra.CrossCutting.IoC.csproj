@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\UniversoGeek.Domain\UniversoGeek.Domain.csproj" />
+    <ProjectReference Include="..\UniversoGeek.Infra.Data\UniversoGeek.Infra.Data.csproj" />
   </ItemGroup>
 
 </Project>

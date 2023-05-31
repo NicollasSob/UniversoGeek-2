@@ -7,12 +7,13 @@ using System.Text;
 using System.Threading.Tasks;
 using UniversoGeek.Domain.Entities;
 using UniversoGeek.Domain.Interfaces;
+using UniversoGeek.Infra.Data.Context;
 
 namespace UniversoGeek.Infra.Data.Repositories
 {
     public class OrderItemRepository : Repository<OrderItem>, IOrderItemRepository
     {
-        public OrderItemRepository(XStoreDbContext context) : base(context)
+        public OrderItemRepository(UniversoGeekDbContext context) : base(context)
         {
         }
 

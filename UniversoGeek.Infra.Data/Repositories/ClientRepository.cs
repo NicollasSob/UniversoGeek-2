@@ -7,12 +7,13 @@ using System.Text;
 using System.Threading.Tasks;
 using UniversoGeek.Domain.Entities;
 using UniversoGeek.Domain.Interfaces;
+using UniversoGeek.Infra.Data.Context;
 
 namespace UniversoGeek.Infra.Data.Repositories
 {
     public class ClientRepository : Repository<Client>, IClientRepository
     {
-        public ClientRepository(XStoreDbContext context) : base(context)
+        public ClientRepository(UniversoGeekDbContext context) : base(context)
         {
         }
 

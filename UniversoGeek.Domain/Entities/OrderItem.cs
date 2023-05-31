@@ -41,5 +41,20 @@ namespace UniversoGeek.Domain.Entities
         {
             return Amount * UnitValue;
         }
+
+        public void SetProductName(string name)
+        {
+            ProductName = name;
+        }
+
+        public void SetProductImage(string image)
+        {
+            ProductImage = image;
+        }
+
+        public void SetAmount(int amount)
+        {
+            Amount = amount;
+        }
     }
 }

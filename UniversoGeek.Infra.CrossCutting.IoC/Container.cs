@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UniversoGeek.Domain.Interfaces;
+using UniversoGeek.Infra.Data.Repositories;
 
 namespace UniversoGeek.Infra.CrossCutting.IoC
 {

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UniversoGeek.Core.DomainObjects;
+using UniversoGeek.Core.Enums;
 
 namespace UniversoGeek.Domain.Entities
 {
@@ -72,7 +73,15 @@ namespace UniversoGeek.Domain.Entities
 
         public void CalculateOrderValue()
         {
-            TotalValue = OrderItems.Sum(p => p.CalculeValue());
+            if (OrderItems == null)
+            {
+                TotalValue = 0;
+            }
+            else
+            {
+                TotalValue = OrderItems.Sum(p => p.CalculeValue());
+            }
+
             CalculateValueTotalDiscount();
         }
 
@@ -110,6 +119,26 @@ namespace UniversoGeek.Domain.Entities
             }
 
             Discount = discount;
+        }
+
+        public void SetCode()
+        {
+            Code = SetRandomAlphanumeric(4);
+        }
+        private string SetRandomAlphanumeric(int size)
+        {
+            var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            var random = new Random();
+            var result = new string(
+                Enumerable.Repeat(chars, size)
+                          .Select(s => s[random.Next(s.Length)])
+                          .ToArray());
+            return result;
+        }
+
+        public void SetStatus(OrderStatus status)
+        {
+            OrderStatus = status;
         }
     }
 }

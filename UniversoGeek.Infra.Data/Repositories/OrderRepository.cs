@@ -5,12 +5,15 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
+using UniversoGeek.Domain.Entities;
+using UniversoGeek.Domain.Interfaces;
+using UniversoGeek.Infra.Data.Context;
 
 namespace UniversoGeek.Infra.Data.Repositories
 {
     public class OrderRepository : Repository<Order>, IOrderRepository
     {
-        public OrderRepository(XStoreDbContext context) : base(context)
+        public OrderRepository(UniversoGeekDbContext context) : base(context)
         {
         }
 

@@ -7,15 +7,16 @@ using System.Text;
 using System.Threading.Tasks;
 using UniversoGeek.Core.DomainObjects;
 using UniversoGeek.Domain.Interfaces;
+using UniversoGeek.Infra.Data.Context;
 
 namespace UniversoGeek.Infra.Data.Repositories
 {
     public class Repository<T> : IRepository<T> where T : Entity
     {
-        protected readonly XStoreDbContext Db;
+        protected readonly UniversoGeekDbContext Db;
         protected readonly DbSet<T> DbSet;
 
-        public Repository(XStoreDbContext context)
+        public Repository(UniversoGeekDbContext context)
         {
             Db = context;
             DbSet = Db.Set<T>();
