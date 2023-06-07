@@ -27,6 +27,7 @@ namespace UniversoGeek.Domain.Entities
         public bool Active { get; private set; }
         public Guid AddressId { get; private set; }
         public Address Address { get; private set; }
+        public string Password { get; private set; }    
 
         public void SetAddress(Address address)
         {
@@ -37,6 +38,11 @@ namespace UniversoGeek.Domain.Entities
         public void ChangeEmail(string email)
         {
             Email = email;//altera aqui
+        }
+
+        public void SetPassword(string password)
+        {
+            Password = password;
         }
 
     }

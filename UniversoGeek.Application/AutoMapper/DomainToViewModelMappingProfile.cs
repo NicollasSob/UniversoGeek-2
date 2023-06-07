@@ -26,6 +26,8 @@ namespace UniversoGeek.Application.AutoMapper
                 .ReverseMap();
             CreateMap<Voucher, VoucherViewModel>()
                 .ReverseMap();
+            CreateMap<Category, CategoryViewModel>()
+                .ReverseMap();
         }
     }
 }

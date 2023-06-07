@@ -16,7 +16,8 @@ namespace UniversoGeek.Domain.Entities
             decimal price,
             DateTime dateRegister,
             string image,
-            int stockQuantity)
+            int stockQuantity,
+            Guid categoryId)
         {
             Name = name;
             Description = description;
@@ -25,6 +26,7 @@ namespace UniversoGeek.Domain.Entities
             DateRegister = dateRegister;
             Image = image;
             StockQuantity = stockQuantity;
+            CategoryId = categoryId;
         }
 
         public string Name { get; private set; }
@@ -34,6 +36,7 @@ namespace UniversoGeek.Domain.Entities
         public DateTime DateRegister { get; private set; }
         public string Image { get; private set; }
         public int StockQuantity { get; private set; }
+        public Guid CategoryId { get; private set; }
 
         public void SetStockQuantity(int quantity)
         {

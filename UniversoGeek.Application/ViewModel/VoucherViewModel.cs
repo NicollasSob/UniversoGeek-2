@@ -20,7 +20,7 @@ namespace UniversoGeek.Application.ViewModel
         public DiscountTypeVoucher DiscountType { get; set; }
         public DateTime? UsedDate { get; set; }
         public DateTime ExpirationDate { get; set; }
-        public bool Active { get; set; }
+        public bool? Active { get; set; }
         public bool Used { get; set; }
     }
 }

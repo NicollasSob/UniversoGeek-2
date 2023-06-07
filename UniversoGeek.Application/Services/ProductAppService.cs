@@ -30,6 +30,8 @@ namespace UniversoGeek.Application.Services
 
         public async Task<ProductViewModel> AddAsync(ProductViewModel viewModel)
         {
+            viewModel.Active = true;
+
             Product domain = _mapper.Map<Product>(viewModel);
             domain = await _repository.AddAsync(domain);
             Commit();

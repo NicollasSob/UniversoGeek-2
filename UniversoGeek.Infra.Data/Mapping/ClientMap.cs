@@ -18,6 +18,7 @@ namespace UniversoGeek.Infra.Data.Mapping
             builder.Property(c => c.Name).HasMaxLength(100).IsRequired();
             builder.Property(c => c.Email).HasMaxLength(100).IsRequired();
             builder.Property(c => c.Cpf).HasMaxLength(14).IsRequired();
+            builder.Property(c => c.Password).HasMaxLength(14).IsRequired();
 
             builder.Property(c => c.Active).HasDefaultValue(true);
             builder.Property(c => c.AddressId).IsRequired();

@@ -31,6 +31,12 @@ namespace UniversoGeek.API.Controllers.V1
             var result = await _productAppService.GetByIdAsync(id);
             return Ok(result);
         }
+        [HttpGet("productbycategory/{category}")]
+        public async Task<ActionResult<IEnumerable<ProductViewModel>>> GetProductCategory(Guid category)
+        {
+            var result = await _productAppService.SearchAsync(c  => c.CategoryId == category);
+            return Ok(result);
+        }
 
         [HttpPost]
         //Insere um produto no banco de dados

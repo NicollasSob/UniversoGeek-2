@@ -21,6 +21,7 @@ namespace UniversoGeek.Infra.Data.Mapping
             builder.Property(p => p.Price).HasPrecision(10, 2).IsRequired();
             builder.Property(p => p.Image).HasMaxLength(200);
             builder.Property(p => p.DateRegister).HasDefaultValue(DateTime.Now);
+            builder.Property(p => p.CategoryId).IsRequired();
 
             builder.Ignore(p => p.Deleted);
         }

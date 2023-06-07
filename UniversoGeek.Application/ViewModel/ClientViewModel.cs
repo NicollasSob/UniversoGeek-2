@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
@@ -16,7 +17,9 @@ namespace UniversoGeek.Application.ViewModel
         [RegularExpression(".+\\@.+\\..+", ErrorMessage = "Informe um email válido...")]
         public string Email { get; set; }
         public string Cpf { get; set; }
-        public bool Active { get; set; }
+        public bool? Active { get; set; }
         public AddressViewModel Address { get; set; }
+        [PasswordPropertyText]
+        public string Password { get; set; }
     }
 }

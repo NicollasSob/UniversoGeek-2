@@ -31,6 +31,8 @@ namespace UniversoGeek.Application.Services
 
         public async Task<VoucherViewModel> AddAsync(VoucherViewModel viewModel)
         {
+            viewModel.Active = true;
+
             Voucher domain = _mapper.Map<Voucher>(viewModel);
             domain = await _repository.AddAsync(domain);
             Commit();

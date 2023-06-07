@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using UniversoGeek.Infra.Data.Context;
 
@@ -11,9 +12,11 @@ using UniversoGeek.Infra.Data.Context;
 namespace UniversoGeek.Infra.Data.Migrations
 {
     [DbContext(typeof(UniversoGeekDbContext))]
-    partial class UniversoGeekDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230605215224_AddCategoryInProduct")]
+    partial class AddCategoryInProduct
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -137,11 +140,6 @@ namespace UniversoGeek.Infra.Data.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<string>("Password")
-                        .IsRequired()
-                        .HasMaxLength(14)
-                        .HasColumnType("nvarchar(14)");
-
                     b.Property<DateTimeOffset>("UpdatedAt")
                         .HasColumnType("datetimeoffset");
 
@@ -262,7 +260,7 @@ namespace UniversoGeek.Infra.Data.Migrations
                     b.Property<DateTime>("DateRegister")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2023, 6, 6, 16, 33, 47, 456, DateTimeKind.Local).AddTicks(8416));
+                        .HasDefaultValue(new DateTime(2023, 6, 5, 18, 52, 24, 108, DateTimeKind.Local).AddTicks(9345));
 
                     b.Property<string>("Description")
                         .IsRequired()

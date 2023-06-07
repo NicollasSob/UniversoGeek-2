@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using UniversoGeek.Infra.Data.Context;
 
@@ -11,9 +12,11 @@ using UniversoGeek.Infra.Data.Context;
 namespace UniversoGeek.Infra.Data.Migrations
 {
     [DbContext(typeof(UniversoGeekDbContext))]
-    partial class UniversoGeekDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230606193347_ADDPassword")]
+    partial class ADDPassword
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -18,6 +18,7 @@ namespace UniversoGeek.Infra.Data.Context
             modelBuilder.ApplyConfiguration(new OrderItemMap());
             modelBuilder.ApplyConfiguration(new ProductMap());
             modelBuilder.ApplyConfiguration(new VoucherMap());
+            modelBuilder.ApplyConfiguration(new CategoryMap());
 
             base.OnModelCreating(modelBuilder);
         }

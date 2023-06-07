@@ -38,6 +38,8 @@ namespace UniversoGeek.API.Configuration
             services.AddScoped<IOrderRepository, OrderRepository>();
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<IVoucherRepository, VoucherRepository>();
+            services.AddScoped<ICategoryRepository, CategoryRepository>();
+
         }
 
         public static void AddServices(this IServiceCollection services)
@@ -46,6 +48,8 @@ namespace UniversoGeek.API.Configuration
             services.AddScoped<IProductAppService, ProductAppService>();
             services.AddScoped<IVoucherAppService, VoucherAppService>();
             services.AddScoped<IOrderAppService, OrderAppService>();
+            services.AddScoped<ICategoryAppService, CategoryAppService>();
+            services.AddScoped<IClientAppService, ClientAppService>();
         }
     }
 }

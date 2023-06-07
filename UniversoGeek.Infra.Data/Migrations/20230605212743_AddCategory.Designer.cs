@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using UniversoGeek.Infra.Data.Context;
 
@@ -11,9 +12,11 @@ using UniversoGeek.Infra.Data.Context;
 namespace UniversoGeek.Infra.Data.Migrations
 {
     [DbContext(typeof(UniversoGeekDbContext))]
-    partial class UniversoGeekDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230605212743_AddCategory")]
+    partial class AddCategory
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -73,38 +76,6 @@ namespace UniversoGeek.Infra.Data.Migrations
                     b.ToTable("ug_Address", (string)null);
                 });
 
-            modelBuilder.Entity("UniversoGeek.Domain.Entities.Category", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<bool>("Active")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValue(true);
-
-                    b.Property<DateTimeOffset>("CreatedAt")
-                        .HasColumnType("datetimeoffset");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasMaxLength(240)
-                        .HasColumnType("nvarchar(240)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<DateTimeOffset>("UpdatedAt")
-                        .HasColumnType("datetimeoffset");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("ug_Category", (string)null);
-                });
-
             modelBuilder.Entity("UniversoGeek.Domain.Entities.Client", b =>
                 {
                     b.Property<Guid>("Id")
@@ -136,11 +107,6 @@ namespace UniversoGeek.Infra.Data.Migrations
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
-
-                    b.Property<string>("Password")
-                        .IsRequired()
-                        .HasMaxLength(14)
-                        .HasColumnType("nvarchar(14)");
 
                     b.Property<DateTimeOffset>("UpdatedAt")
                         .HasColumnType("datetimeoffset");
@@ -253,16 +219,13 @@ namespace UniversoGeek.Infra.Data.Migrations
                         .HasColumnType("bit")
                         .HasDefaultValue(true);
 
-                    b.Property<Guid>("CategoryId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<DateTimeOffset>("CreatedAt")
                         .HasColumnType("datetimeoffset");
 
                     b.Property<DateTime>("DateRegister")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2023, 6, 6, 16, 33, 47, 456, DateTimeKind.Local).AddTicks(8416));
+                        .HasDefaultValue(new DateTime(2023, 6, 5, 18, 27, 43, 437, DateTimeKind.Local).AddTicks(6171));
 
                     b.Property<string>("Description")
                         .IsRequired()
